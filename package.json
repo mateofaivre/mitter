@@ -1,0 +1,62 @@
+{
+  "name": "TinyGrahou",
+  "description": "TinyGrahou — A starter to easily & quickly code experimental stuff!",
+  "version": "0.0.1",
+  "author": {
+    "name": "Les Animals",
+    "url": "https://lesanimals.digital"
+  },
+  "homepage": "https://github.com/lesanimals/tinygrahou",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:lesanimals/tinygrahou.git"
+  },
+  "license": "GPL-2.0",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.12.16",
+    "babel-loader": "^8.2.2",
+    "browser-sync": "^2.26.14",
+    "cash-dom": "^8.1.0",
+    "del": "^6.0.0",
+    "eventemitter3": "^4.0.7",
+    "fetch-loader": "github:LilGast8/fetch-loader",
+    "fs": "0.0.2",
+    "glslify": "^7.1.1",
+    "gsap": "npm:@gsap/shockingly@^3.6.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-group-css-media-queries": "^1.2.2",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-rsync": "0.0.9",
+    "gulp-sass": "^4.1.0",
+    "gulp-sass-glob": "^1.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-svg-symbols": "^3.2.3",
+    "gulp-svgmin": "^3.0.0",
+    "gulp-zip": "^5.0.2",
+    "ify-loader": "^1.1.0",
+    "imagemin-jpeg-recompress": "^7.0.0",
+    "imagemin-pngquant": "^9.0.1",
+    "js-cookie": "^2.2.1",
+    "merge-stream": "^2.0.0",
+    "mobile-detect": "^1.4.4",
+    "mysqldump": "^3.2.0",
+    "require-dir": "^1.2.0",
+    "vanilla-lazyload": "^17.3.1",
+    "webpack": "^5.22.0",
+    "webpack-stream": "^6.1.2"
+  },
+  "browserify": {
+    "transform": [
+      "glslify"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+	
+	"HOST": {
+		"DEV": [ "{HOST}" ]
+	},
+	"BROWSER_SYNC": {
+		"PROXY":				"{PROXY_URL}",
+		"SSL_PATH_DIRECTORY":	"{SSL_PATH}",
+		"KEY_PATH":				"local.lesanimals.digital.key",
+		"CERT_PATH":			"local.lesanimals.digital.crt"
+	}
+	
+}

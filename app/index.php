@@ -1,0 +1,1 @@
+<?php require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . "/app/components/pages/index/php/index.php" );

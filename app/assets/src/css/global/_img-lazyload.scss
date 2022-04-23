@@ -1,0 +1,27 @@
+
+
+
+/*************************************/
+/* -------- Images lazyload -------- */
+/*************************************/
+
+
+.img_lazy_container { height: 0;
+	&.img_lazy__bg {
+		background-color: rgba( $black, 0.1 );
+		transition: background 0.5s $easeInOutQuad 0.5s;
+	}
+	
+	&.img_loaded {
+		&.img_lazy__bg { background-color: rgba( $black, 0 ); }
+		.img_lazy { opacity: 1; }
+	}
+}
+
+.img_lazy {
+	width: 100%;
+	opacity: 0;
+	transition: opacity 1s $easeInOutQuad;
+}
+
+

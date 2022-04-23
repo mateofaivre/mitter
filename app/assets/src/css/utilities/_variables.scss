@@ -1,0 +1,53 @@
+/*******************************/
+/* -------- Variables -------- */
+/*******************************/
+
+
+/* -------- Colors -------- */
+
+$black: #000;
+$white: #fff;
+$blueLA: #2c2ce7;
+
+$highlight: $blueLA;
+
+
+/* -------- Fonts -------- */
+
+$font: 'Arial', sans-serif;
+$fontTitle: 'Times', serif;
+
+$bg-color: #151728;
+$border-color: #272a3a;
+$main-bg-color: #24273b;
+$light-blue: #1b86f9;
+$title-font: "DM Sans", sans-serif;
+$body-font: "Source Sans Pro", sans-serif;
+$side-title: #5c5e6e;
+$button: #8f98a9;
+$body-bg-color: $bg-color;
+$body-color: #ccc8db;
+
+
+/* -------- Z-indexes -------- */
+
+$content_depth: 10;
+$menu_depth: 20;
+$contact_depth: 30;
+
+
+/* -------- Responsive -------- */
+
+// Small desktops
+$mediumMin: 1281px;
+$mediumMax: 1280px;
+
+// Mobile limit
+$mobileMin: 961px;
+$mobileMax: 960px;
+
+// Small (smartphones)
+$smallMin: 501px;
+$smallMax: 500px;
+
+

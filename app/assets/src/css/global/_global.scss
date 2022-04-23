@@ -1,0 +1,56 @@
+
+
+
+/****************************/
+/* -------- Global -------- */
+/****************************/
+
+
+html { box-sizing: border-box;
+	&.desktop {
+		body { overscroll-behavior-y: none; }
+	}
+}
+
+*, *:before, *:after {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: none;
+	box-sizing: inherit;
+}
+
+::selection {
+	background: $highlight;
+	color: $white;
+	text-shadow: none;
+}
+
+::-moz-selection {
+	background: $highlight;
+	color: $white;
+	text-shadow: none;
+}
+
+body {
+	width: 100%;
+	// min-width: $contentMinW;
+	// height: 100%;
+	// min-height: $contentMinH;
+	font: normal 16px/30px $body-font;
+	// -webkit-font-smoothing: subpixel-antialiased;
+	// -moz-osx-font-smoothing: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	// -webkit-text-stroke: 0.35px;
+	color: $body-color;
+	background-color: $body-bg-color;
+	overflow-y: scroll;
+}
+
+a {
+	color: $black;
+	// text-decoration: none;
+}
+
+

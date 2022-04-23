@@ -1,0 +1,21 @@
+{
+	
+	"VERSION":	"0.0.1",
+	"HOST": {
+		"PREPROD":	[ "preprod.tinygrahou.com" ],
+		"PROD":		[ "tinygrahou.lesanimals.digital", "clients.lesanimals.digital" ]
+	},
+	"DEPLOY": {
+		"PREPROD": {
+			"HOSTNAME":	"hostname",
+			"DEST":		"/path_to_theme_directory",
+			"USERNAME":	"username"
+		},
+		"PROD": {
+			"HOSTNAME":	"ssh.cluster023.hosting.ovh.net",
+			"DEST":		"/home/lesanimaml/clients/tinygrahou",
+			"USERNAME":	"lesanimaml"
+		}
+	}
+	
+}
