@@ -352,6 +352,17 @@
 .box {
 	background-color: $bg-color;
 	border-radius: 4px;
+
+	.status-share {
+		background-color: $light-blue;
+		border: none;
+		color: #fff;
+		border-radius: 4px;
+		padding: 10px 20px;
+		margin-left: auto;
+		//box-shadow: 0 0 20px #1b86f9;
+		cursor: pointer;
+	}
 }
 
 .intro {
@@ -531,10 +542,18 @@
 .status-main {
 	padding: 0 20px;
 	display: flex;
+	justify-content: center;
 	align-items: center;
 	border-bottom: 1px solid $border-color;
 	padding-bottom: 20px;
 	flex-wrap: wrap;
+}
+
+.status-main--tweet {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	width: 100%;
 }
 
 .status-textarea {
@@ -545,8 +564,21 @@
 	margin-top: 15px;
 	color: #fff;
 	max-width: calc(100% - 70px);
+
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	resize: vertical;
+	min-height: 40px;
+	line-height: 20px;
+
 	&::placeholder {
 		color: #5c5d71;
+	}
+
+	&[contenteditable]:empty::before {
+		content: "Write a message...";
+		color: gray;
 	}
 }
 
@@ -594,19 +626,6 @@
 		}
 	}
 }
-
-.status-share {
-	background-color: $light-blue;
-	border: none;
-	color: #fff;
-	border-radius: 4px;
-	padding: 10px 20px;
-	margin-left: auto;
-	//box-shadow: 0 0 20px #1b86f9;
-	cursor: pointer;
-}
-
-
 
 .account-button {
 	border: 0;

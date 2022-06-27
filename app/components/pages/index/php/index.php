@@ -45,32 +45,22 @@ $userDatas = $user->getUsersDatas();
 									<a class="status-menu-item" href="#">Videos</a>
 								</div>
 								<div class="status-main">
-									<img src="/app/assets/src/img/users/<?php
-									echo $userDatas[ 'avatar' ]; ?>" class="status-img">
-									<textarea class="status-textarea" placeholder="Write something..." name="meet_text"></textarea>
+									<div class="status-main--tweet">
+										<img src="/app/assets/src/img/users/<?php
+										echo $userDatas[ 'avatar' ] != NULL ? $userDatas[ 'avatar' ] : "pp.png"; ?>" class="status-img">
+										<textarea class="status-textarea" placeholder="Write something..." name="meet_text"></textarea>
+<!--										<span class="status-textarea textarea" role="textbox" contenteditable></span>-->
+									</div>
+									<div class="status-main--preview">
+									</div>
 								</div>
 								<div class="status-actions">
-									<!--									<a href="#" class="status-action">-->
-									<!--										--><?php
-									//										include $_SERVER[ 'DOCUMENT_ROOT' ] . "/app/assets/src/img/people.svg" ?>
-									<!--										People-->
-									<!--									</a>-->
-									<!--									<a href="#" class="status-action">-->
-									<!--										--><?php
-									//										include $_SERVER[ 'DOCUMENT_ROOT' ] . "/app/assets/src/img/check-in.svg" ?>
-									<!--										Check in-->
-									<!--									</a>-->
-									<!--									<a href="#" class="status-action">-->
-									<!--										--><?php
-									//										include $_SERVER[ 'DOCUMENT_ROOT' ] . "/app/assets/src/img/mood.svg" ?>
-									<!--										Mood-->
-									<!--									</a>-->
 									<div class="meet__gallery">
 										<label for="meet__gallery--btn"><?php
 											include $_SERVER[ 'DOCUMENT_ROOT' ] . "/app/assets/src/img/gallery.svg" ?></label>
-										<input id="meet__gallery--btn" class="meet__gallery--btn" accept="image/png, image/gif, image/jpeg, audio/mpeg3, audio/ogg, audio/waw" type="file" multiple="multiple" name="meet_gallery[]">
+										<input id="meet__gallery--btn" class="meet__gallery--btn" accept="image/png, image/gif, image/jpeg, audio/mpeg3, audio/ogg, audio/waw" type="file" multiple name="meet_gallery[]">
 									</div>
-									<button class="status-share" type="submit" name="meet_submit">Share</button>
+									<input class="status-share" type="submit" name="meet_submit" value="Share"/>
 								</div>
 							</div>
 							<?php
@@ -90,7 +80,7 @@ $userDatas = $user->getUsersDatas();
 						include $_SERVER[ 'DOCUMENT_ROOT' ] . "/app/assets/src/img/notif.svg" ?>
 					</button>
 					<span class="account-user"><?php
-						echo $userDatas[ 'prenomUser' ]. " ". $userDatas[ 'nomUser' ] ; ?>
+						echo $userDatas[ 'prenomUser' ] . " " . $userDatas[ 'nomUser' ]; ?>
         <img src="/app/assets/src/img/users/<?php
 		echo $userDatas[ 'avatar' ]; ?>" alt="" class="account-profile" alt="">
         <span>▼</span>
@@ -104,7 +94,7 @@ $userDatas = $user->getUsersDatas();
 				</div>
 				<div class="side-wrapper contacts">
 					<div class="side-title">CONTACTS</div>
-					
+
 					<?php
 					include $_SERVER[ 'DOCUMENT_ROOT' ] . "/app/components/statics/contact/php/contact.php";
 					?>
@@ -127,6 +117,8 @@ $userDatas = $user->getUsersDatas();
 	</div>
 	<script src="<?php
 	$_SERVER[ 'DOCUMENT_ROOT' ] ?>/app/components/statics/audio-player/js/audioPlayer.js"></script>
+	<script src="<?php
+	$_SERVER[ 'DOCUMENT_ROOT' ] ?>/app/components/utils/preview-input-file/js/previewInputFile.js"></script>
 	</body>
 <?php
 require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . "/app/components/statics/footer/php/footer.php" );

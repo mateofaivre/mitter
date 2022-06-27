@@ -6,7 +6,7 @@ $stories = [
 		'story-date' => '12 hours'
 	],
 	[
-		'img'        => 'https://pbs.twimg.com/profile_images/1153966095444992000/1lpIyHaQ.jpg',
+		'img'        => 'https://pbs.twimg.com/profile_images/737221709267374081/sdwta9Oh.jpg',
 		'username'   => 'Gvozden Boskovsky',
 		'story-date' => '29 minutes',
 	],

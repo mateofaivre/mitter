@@ -7,7 +7,6 @@ class Login {
 	}
 	
 	public function login( $dbh, $mail, $password ) {
-		
 		if ( empty( $password ) ) {
 			echo 'empty password';
 		} else {

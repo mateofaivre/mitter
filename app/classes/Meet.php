@@ -63,7 +63,7 @@ class Meet {
 		$stmtMeetFile   = $dbh->prepare( "SELECT idFile, file FROM publication_file, publication WHERE publication.idUser = '$idUser' AND publication.idPublication = publication_file.idPublication AND publication.idPublication = '$idPublication'" );
 		$datasMeetFile  = $stmtMeetFile->execute();
 		$this->fileMeet = [];
-		if ($stmtMeetFile->rowCount() != 0) {
+		if ( $stmtMeetFile->rowCount() != 0 ) {
 			while ( $datasMeetFile = $stmtMeetFile->fetch() ) {
 				array_push( $this->fileMeet, $datasMeetFile[ "file" ] );
 			};
@@ -108,16 +108,15 @@ class Meet {
 		$idPublication      = $dbh->lastInsertId();
 		$datasMeetToPublish = $stmtMeetToPublish->fetch();
 		
-		$stmtMeetToPublishMetas  = $dbh->prepare( "INSERT INTO publication_meta (idPublication, text) VALUES ('$idPublication', '$text')" );
+		$stmtMeetToPublishMetas  = $dbh->prepare( "INSERT INTO publication_meta (idPublication, text) VALUES ('$idPublication', :text)" );
+		$datasMeetToPublishmetas = $stmtMeetToPublishMetas->bindParam(":text", $text);
 		$datasMeetToPublishMetas = $stmtMeetToPublishMetas->execute();
 		$datasMeetToPublishMetas = $stmtMeetToPublishMetas->fetch();
 		
-		if ( empty( $media ) ) {
-			foreach ( $medias as $key => $media ) {
-				$stmtMeetToPublishMetas  = $dbh->prepare( "INSERT INTO publication_file (idPublication, file) VALUES ('$idPublication', '$media')" );
-				$datasMeetToPublishMetas = $stmtMeetToPublishMetas->execute();
-				$datasMeetToPublishMetas = $stmtMeetToPublishMetas->fetch();
-			}
+		foreach ( $medias as $key => $media ) {
+			$stmtMeetToPublishMetas  = $dbh->prepare( "INSERT INTO publication_file (idPublication, file) VALUES ('$idPublication', NULLIF('$media', '') )" );
+			$datasMeetToPublishMetas = $stmtMeetToPublishMetas->execute();
+			$datasMeetToPublishMetas = $stmtMeetToPublishMetas->fetch();
 		}
 		
 	}

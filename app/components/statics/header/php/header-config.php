@@ -5,7 +5,7 @@ if ( session_status() === PHP_SESSION_NONE ) {
 
 $login = new Login();
 
-if (basename( $_SERVER[ 'PHP_SELF' ] ) != "login.php") {
+if (basename( $_SERVER[ 'PHP_SELF' ] ) != "login.php" && basename( $_SERVER[ 'PHP_SELF' ] ) != "signup.php") {
 	$login->checkLogin() != true ? exit( header( "Location: /app/components/pages/login/php/login.php" ) ) : "";
 }
 else {

@@ -26,5 +26,4 @@ class ConnectDb {
 
 $instance = ConnectDb::getInstance();
 $conn = $instance->getConnection();
-var_dump($conn);
 ?>

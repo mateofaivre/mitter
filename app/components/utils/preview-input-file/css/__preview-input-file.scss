@@ -1,0 +1,29 @@
+.status-main--preview {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding-left: 70px;
+	margin: 20px 0px;
+
+	&.status-main--preview--multiple {
+		flex-wrap: wrap;
+		gap: 12px;
+
+		.status-main--preview--file {
+			aspect-ratio: 1/1 !important;
+			flex: 1 1 calc(50% - 12px);
+			max-height: 400px;
+		}
+	}
+}
+
+.status-main--preview--file {
+	width: 100%;
+	height: auto;
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	max-height: 700px;
+	border-radius: 4px;
+}

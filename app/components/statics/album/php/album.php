@@ -9,7 +9,7 @@ $meetDate = $meet->getMeetDate();
 
 $supportedImg   = array( 'gif', 'jpg', 'jpeg', 'png' );
 $supportedSound = array( 'mp3', 'waw', 'ogg' );
-
+;
 foreach ( $meetsDatas as $key => $meetData ) {
 	$user->setUsersDatas( $dbh, $meetData[ "idUser" ] );
 	$userDatas = $user->getUsersDatas();
@@ -36,23 +36,25 @@ foreach ( $meetsDatas as $key => $meetData ) {
 				<?php
 				$meet->setMeetFile( $dbh, $meetData[ "idUser" ], $meetData[ "idPublication" ] );
 				$meetFile = $meet->getMeetFile();
-				print_r( $meetFile );
 				if ( !empty( $meetFile ) ) {
 					foreach ( $meetFile as $key => $file ) {
-						$fileExtension = explode( ".", $file )[ 1 ]; ?>
-						<div class="media" style="<?php
-						echo in_array( $fileExtension, $supportedImg ) == true ? "background-image: url('/app/assets/src/medias/$file')" : "" ?>">
+						if ($file != NULL) {
+							$fileExtension = explode( ".", $file )[ 1 ]; ?>
+							<div class="media" style="<?php
+							echo in_array( $fileExtension, $supportedImg ) == true ? "background-image: url('/app/assets/src/medias/$file')" : "" ?>">
+								<?php
+								//						if ( in_array( $fileExtension, $supportedImg ) ) { ?>
+								<!--							<img src="/app/assets/src/medias/--><?php
+								//							echo $file; ?><!--" alt="" class="album-photo"/>-->
+								<!--							--><?php
+								//						}
+								if ( in_array( $fileExtension, $supportedSound ) ) {
+									require( $_SERVER[ 'DOCUMENT_ROOT' ] . "/app/components/statics/audio-player/php/audio-player.php" );
+								} ?>
+							</div>
 							<?php
-							//						if ( in_array( $fileExtension, $supportedImg ) ) { ?>
-							<!--							<img src="/app/assets/src/medias/--><?php
-							//							echo $file; ?><!--" alt="" class="album-photo"/>-->
-							<!--							--><?php
-							//						}
-							if ( in_array( $fileExtension, $supportedSound ) ) {
-								require( $_SERVER[ 'DOCUMENT_ROOT' ] . "/app/components/statics/audio-player/php/audio-player.php" );
-							} ?>
-						</div>
-						<?php
+						}
+
 					}
 				} ?>
 			</div>

@@ -15,17 +15,29 @@
 
 .album-detail {
 	width: calc(100% - 110px);
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	column-gap: 15px;
+	margin-top: -6px;
 }
 
-.album-title span {
-	color: #1771d6;
-	cursor: pointer;
+.album-title {
+	line-height: 16px;
+
+	span {
+		color: #1771d6;
+		cursor: pointer;
+	}
 }
+
+
 
 .album-date {
+	line-height: 15px;
+
 	font-size: 15px;
 	color: #595c6c;
-	margin-top: 4px;
 }
 
 .album-content {

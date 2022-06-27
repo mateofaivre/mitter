@@ -6,7 +6,7 @@ const styleDestination	= './app/assets/dist/css/';
 	
 // CSS related plugins.
 const plumber		= require( 'gulp-plumber' );
-const sass			= require( 'gulp-sass' );
+const sass			= require( 'gulp-sass' )(require('sass'));
 const sassGlob		= require( 'gulp-sass-glob' );
 const sourcemaps	= require( 'gulp-sourcemaps' );
 const autoprefixer	= require( 'gulp-autoprefixer' );

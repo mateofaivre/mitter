@@ -1,6 +1,7 @@
 <?php
-$file      = $_FILES[ "meet_gallery" ];
+$file = $_FILES[ "meet_gallery" ];
 $filesName = [];
+
 for ( $i = 0; $i < count( $file[ "name" ] ); $i++ ) {
 	$target_dir = "../../../../assets/src/medias/";
 	array_push( $filesName, basename( $file[ "name" ][ $i ] ) );
@@ -27,10 +28,10 @@ for ( $i = 0; $i < count( $file[ "name" ] ); $i++ ) {
 	}
 	
 	// Check file size
-//	if ( $file[ "size" ][ $i ] > 500000 ) {
-//		echo "Sorry, your file is too large.";
-//		$uploadOk = 0;
-//	}
+	//	if ( $file[ "size" ][ $i ] > 500000 ) {
+	//		echo "Sorry, your file is too large.";
+	//		$uploadOk = 0;
+	//	}
 	
 	// Allow certain file formats
 	if ( $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"

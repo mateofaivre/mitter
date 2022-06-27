@@ -5,8 +5,9 @@ require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . "/app/components/statics/header/php/
 if ( isset( $_FILES ) ) {
 	require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . "/app/components/utils/upload-file/php/upload-file.php" );
 } else {
-	$filesName = "";
+	$filesName = NULL;
 }
+
 
 $meet = new Meet();
 $meet->setMeetToPublish( $dbh, $_SESSION[ "idUser" ], $_POST[ "meet_text" ], $filesName );
