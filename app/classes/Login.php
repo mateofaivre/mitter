@@ -10,7 +10,7 @@ class Login {
 		if ( empty( $password ) ) {
 			echo 'empty password';
 		} else {
-			$stmt_login  = $dbh->prepare( "SELECT * FROM user WHERE passwordUser ='$password' AND emailUser = '$mail'	 " );
+			$stmt_login  = $dbh->prepare( "SELECT * FROM mtr_user WHERE passwordUser ='$password' AND emailUser = '$mail'	 " );
 			$datas_login = $stmt_login->execute();
 			$datas_login = $stmt_login->fetch();
 			
@@ -31,7 +31,7 @@ class Login {
 			echo 'empty password';
 		} else {
 			$date        = date( 'Y-m-d H:i:s' );
-			$stmt_login  = $dbh->prepare( "INSERT INTO user (emailUser, nomUser, prenomUser, username, active, date_creation, passwordUser) VALUES ('$mail', '$firstname', '$lastname', '$username', '1', '$date' , '$password')" );
+			$stmt_login  = $dbh->prepare( "INSERT INTO mtr_user (emailUser, nomUser, prenomUser, username, active, date_creation, passwordUser) VALUES ('$mail', '$firstname', '$lastname', '$username', '1', '$date' , '$password')" );
 			$datas_login = $stmt_login->execute();
 			
 			if ( $stmt_login->rowCount() == 1 ) {

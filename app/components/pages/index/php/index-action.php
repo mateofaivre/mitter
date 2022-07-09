@@ -1,5 +1,4 @@
 <?php
-
 require_once( $_SERVER[ 'DOCUMENT_ROOT' ] . "/app/components/statics/header/php/header.php" );
 
 if ( isset( $_FILES ) ) {

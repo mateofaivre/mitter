@@ -5,11 +5,10 @@ $config = Fateal\Config::getInstance();
 $user = new User();
 $user->setUsersDatas( $dbh, $_SESSION[ "idUser" ] );
 $userDatas = $user->getUsersDatas();
-
 ?>
 	<body class="body body--home">
 	<div id="main_container" class="main_container">
-		<form class="content__inner" action="/app/components/pages/index/php/index-action.php" method="POST" enctype="multipart/form-data">
+		<form class="content__inner" action="/app/components/pages/index/php/index-action.php" method="post" enctype="multipart/form-data">
 			<div class="left-side">
 				<div class="left-side-button">
 					<?php
@@ -48,7 +47,7 @@ $userDatas = $user->getUsersDatas();
 									<div class="status-main--tweet">
 										<img src="/app/assets/src/img/users/<?php
 										echo $userDatas[ 'avatar' ] != NULL ? $userDatas[ 'avatar' ] : "pp.png"; ?>" class="status-img">
-										<textarea class="status-textarea" placeholder="Write something..." name="meet_text"></textarea>
+										<textarea class="status-textarea" placeholder="Write something..." id="meet_text" name="meet_text"></textarea>
 <!--										<span class="status-textarea textarea" role="textbox" contenteditable></span>-->
 									</div>
 									<div class="status-main--preview">
@@ -60,7 +59,7 @@ $userDatas = $user->getUsersDatas();
 											include $_SERVER[ 'DOCUMENT_ROOT' ] . "/app/assets/src/img/gallery.svg" ?></label>
 										<input id="meet__gallery--btn" class="meet__gallery--btn" accept="image/png, image/gif, image/jpeg, audio/mpeg3, audio/ogg, audio/waw" type="file" multiple name="meet_gallery[]">
 									</div>
-									<input class="status-share" type="submit" name="meet_submit" value="Share"/>
+									<input class="status-share" type="submit" name="meet_submit" id="meet_submit" value="Share"/>
 								</div>
 							</div>
 							<?php

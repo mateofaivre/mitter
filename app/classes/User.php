@@ -13,7 +13,7 @@ class User {
 	}
 	
 	public function setUsersDatas( $dbh, $idUser ) {
-		$stmtUser  = $dbh->prepare( "SELECT emailUser, nomUser, prenomUser, username, date_birth, avatar, active, biography, location, gender, date_creation, date_connexion, date_modification, website_link, passwordUser FROM user WHERE idUser = '$idUser' 	 " );
+		$stmtUser  = $dbh->prepare( "SELECT emailUser, nomUser, prenomUser, username, date_birth, avatar, active, biography, location, gender, date_creation, date_connexion, date_modification, website_link, passwordUser FROM mtr_user WHERE idUser = '$idUser' 	 " );
 		$this->datasUser = $stmtUser->execute();
 		$this->datasUser = $stmtUser->fetch();
 	}
